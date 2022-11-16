@@ -1,0 +1,62 @@
+.course-input {
+  outline: none;
+  background-color: transparent;
+  border: 1px solid #ff0052;
+  color: #eee;
+  padding: 4px 8px;
+  margin: 10px auto;
+  border-radius: 16px;
+  display: block;
+  transition: 300ms;
+}
+
+.course-input:focus {
+  box-shadow: 0 0 8px #ff0052;
+}
+
+.course-submit {
+  background-color: transparent;
+  border: 1px solid #ff0052;
+  color: #eee;
+  padding: 4px 8px;
+  margin: 10px auto;
+  border-radius: 16px;
+  display: block;
+  transition: 300ms;
+}
+
+.course-submit:hover {
+  box-shadow: 0 0 8px #ff0052;
+  color: #ff0052;
+}
+
+.course-update {
+  outline: none;
+  background-color: transparent;
+  border: 1px solid #ff0052;
+  color: #eee;
+  padding: 4px 8px;
+  border-radius: 16px;
+  transition: 300ms;
+}
+
+.update-submit {
+  color: #eee;
+  background-color: transparent;
+  border: 2px solid #ff0052;
+  border-radius: 16px;
+  cursor: pointer;
+  padding: 4px 10px;
+  transition: 300ms;
+}
+
+.update-submit:hover {
+  color: #ff0052;
+  box-shadow: 0 0 8px #ff0052;
+}
+
+.update-form {
+  padding: 6px;
+  display: flex;
+  justify-content: space-between;
+}
