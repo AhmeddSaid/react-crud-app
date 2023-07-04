@@ -1,11 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Form from "./components/Form/Form";
 import List from "./components/List/List";
 
 const App = () => {
-  const [courses, setCourses] = useState([{ name: "HTML" }, { name: "CSS" }, { name: "JavaScript" }]);
+  const initVal = [{ name: "HTML" }, { name: "CSS" }, { name: "JavaScript" }];
+  const [courses, setCourses] = useState(initVal);
   const [current, setCurrent] = useState("");
+
+  useEffect(() => {
+    // Retrieve courses from local storage on component mount
+    const storedCourses = localStorage.getItem("courses");
+    if (storedCourses) {
+      setCourses(JSON.parse(storedCourses));
+    }
+  }, []);
+
+  useEffect(() => {
+    // Update local storage whenever courses change
+    localStorage.setItem("courses", JSON.stringify(courses));
+  }, [courses]);
 
   //deleteCourse
   const deleteCourse = (e) => {
@@ -57,11 +71,7 @@ const App = () => {
         <h2 className="add-course">Add Courses</h2>
       </div>
       <div>
-        <Form
-          updateCoures={updateCoures}
-          addCourse={addCourse}
-          current={current}
-        />
+        <Form updateCoures={updateCoures} addCourse={addCourse} current={current} />
       </div>
       <div>
         <ol>{courseList}</ol>
